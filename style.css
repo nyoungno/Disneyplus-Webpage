@@ -1,0 +1,347 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Inspire-KO, sans-serif;
+    color: white;
+    background-color:#040714;
+  }
+  
+  h1,h2 {
+    font-weight : bolder;
+  }
+  
+  section {
+    padding: 5.6vw;
+  }
+  
+  ul{
+    list-style:none;
+    padding-left:0px;
+  }
+  
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  
+  .navbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 5;
+  
+    height: 70px;
+    padding: 0 36px;
+  }
+  
+  .section_fix {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  
+  .streaming_container {
+    position: relative;
+    z-index:4;
+  }
+  
+  .text-fine {
+    font-size: 12px;
+  }
+  
+  .container_buttonbox {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  
+  .button_item {
+    width: 90%
+  }
+  
+  .grid_container {
+    display:flex;
+    justify-content: space-between; 
+    gap: 24px /* 컨테이너 사이공간 */
+  }
+  
+  .small_cot {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .line-divided {
+    position: relative;
+  }
+  
+  .grid-item {
+    flex: 0 0 calc(25% - 18px); /*  해당 아이템이 자라거나 축소하지 않으며, 초기 크기는 플렉스 컨테이너의 너비의 25%에서 18픽셀을 뺀 값 */
+    width: calc(25% - 18px); /*  컨테이너의 너비의 25%에서 18픽셀을 뺀 크기 */
+  }
+  
+  .line-divided:after {
+    background: #f9f9f9;
+    content: "";
+    display: block;
+    height: 80px;
+    left: -12px; /* gap 사이공간(1/2) */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+  }
+  
+  .memvership_section {
+    padding: 11.2vw;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .feature-column-header {
+    padding: 33px 8px;
+    width: 42%;
+  }
+  
+  .chart-column-header {
+    padding: 33px 8px;
+    width: 29%;
+  }
+  
+  .cell-header {
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+  
+  }
+  
+  .feature-row {
+    border-bottom: 1px solid hsla(0, 0%, 75%, .3);
+  }
+  
+  .card_items {
+    background-color: #040714;
+    border:none;
+  }
+  
+  .sidealign {
+    align-items: center;
+    display: flex;
+  }
+  
+  .sidealign-img {
+    max-width: 50%;
+  
+  }
+  
+  .image-thumbnail {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  
+  .sidealign .text-container {
+    box-sizing: border-box;
+    padding: 20px 2vw 0;
+  }
+  
+  .accordion {
+    --bs-accordion-btn-bg: #13151d; 
+    --bs-accordion-active-bg: #13151d; 
+    --bs-accordion-active-color: white
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-bg: #13151d; 
+    --bs-accordion-color:  white;
+  }
+  
+  
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+  }
+  
+  .acceldjs {
+    color: #cecece;
+    font-weight: bold;
+  }
+  
+  footer_container {
+    padding-top: 0;
+  }
+  
+  .footer_line {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  
+  .footer_line_con {
+    text-align: center;
+  
+  }
+  
+  .footer_line_first_con {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  
+  @media (max-width:992px) {
+    .memvership_section {
+      padding: 0;
+    }
+    .streaming_container {
+      padding-top: 320px;
+    }
+    .carousel-indicators {
+      display: none;
+    }
+    .feature-column-header {
+      padding: 33px 8px;
+      width: 33%;
+    }
+    .chart-column-header {
+      padding: 33px 8px;
+      width: 33%;
+    }
+    .streaming_center {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .container_buttonbox {
+      display: flex;
+      justify-content: space-around;
+    }
+    .cell-header {
+      display: flex;
+      gap: 0px;
+      text-align: center;
+      align-items: center;
+    }
+    .footer_line_first_con {
+      display: block;
+      width: 80%;
+    }
+    .footer_line {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 10px;
+    }
+    .footer_line li{
+      font-size: 0.8rem;
+    }
+    .footer-column-box {
+      padding: 0px 2px;
+      width: 25%;
+    }
+    .line_con {
+      display: flex;
+      justify-content: center;
+    }
+  
+  }
+  
+  @media (max-width:768px) {
+    .container_buttonbox {
+      display: block;
+      justify-content: center;
+      
+      .btn{
+        Width :70%;
+      }
+      .d-grid {
+        display: grid !important;
+        justify-items: center;
+      }
+      .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1.0rem;
+        --bs-btn-font-size: 1.3rem;
+      }
+      
+    }
+    .grid_container {
+      display:block;
+    }
+    .grid-item {
+      flex: 0 0 calc(100% - 18px);
+      width: calc(100% - 18px);
+    }
+    .line-divided:after {
+      display: none;
+    }
+    .sidealign {
+      align-items: center;
+      text-align: center;
+      display: block;
+    }
+    .grid_container {
+      padding-left: 16px;
+    } 
+    .btn-lg {
+        --bs-btn-padding-y: 0.6rem;
+        --bs-btn-padding-x: 1.2rem;
+        --bs-btn-font-size: 0.8rem;
+    }
+  
+  }
+  
+  @media (max-width:430px) {
+    .streaming_container {
+      padding-top: 100px;
+    }
+    .footer_line_first_con {
+      display: block;
+      width: 100%;
+    }
+  
+  }
+  
+  @media all and (min-width: 993px) and (max-width:1280px) {
+    .memvership_section {
+      padding: 0;
+    }
+    .streaming_container {
+      padding-top: 540px;
+    }
+    .carousel-indicators {
+      display: none;
+    }
+    .feature-column-header {
+      padding: 33px 8px;
+      width: 33%;
+    }
+    .chart-column-header {
+      padding: 33px 8px;
+      width: 33%;
+    }
+    .streaming_center {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .container_buttonbox {
+      display: flex;
+      justify-content: space-around;
+    }
+    .cell-header {
+      display: flex;
+      gap: 0px;
+      text-align: center;
+      align-items: center;
+    }
+  }
+  
+  
+  
+  
