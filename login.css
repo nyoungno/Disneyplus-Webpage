@@ -1,0 +1,134 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background-position: center;
+  background-image: url(./image/disney.jpg);
+  font-family: Inspire-KO, sans-serif;
+  font-weight: bolder;
+  color: #252526;
+}
+
+h3 {
+  font-weight: bolder;
+}
+
+main {
+  height: 829px;
+  width: 100%;
+  padding: 24px 40px 80px;
+}
+
+footer {
+  margin: 80px 0px 0px;
+  padding: 28px 40px;
+  background-color: white;
+}
+
+.small-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input_items {
+  height: 60px;
+  background: rgb(240, 240, 240);
+  border-width: 0px;
+  padding: 16px;
+}
+
+.button_items {
+  border-radius: 25px;
+  height: 52px;
+  background-color: #040714;
+  color: white;
+  font-weight: bolder;
+}
+
+.logo_box {
+  text-align: center;
+}
+
+.stepper {
+  font-size: 12px;
+}
+
+.learn-more-heading {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #5f6166;
+}
+
+.learn-more-body {
+  font-size: 12px;
+  color: #5f6166;
+}
+
+.container-items {
+  display: flex;
+  justify-content: center;
+}
+
+.primary-container {
+  width: 580px;
+  height: 621px;
+  padding: 56px 72px;
+  background-color: white;
+  border-radius: 24px;
+}
+
+.footer_container {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.textLink {
+  font-size: 14px;
+  color: #5f6166;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  main {
+    height: 100%;
+    width: 100%;
+    padding: 0px 0px 0px;
+  }
+  .primary-container {
+    width: 580px;
+    height: 621px;
+    padding: 32px 24px;
+    background-color: white;
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  footer {
+    margin: 80px 0px 0px;
+    padding: 28px 40px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    margin: 80px 0px 0px;
+    padding: 28px 40px;
+    background-color: white;
+    bottom: 0px;
+    position: absolute;
+  }
+}
