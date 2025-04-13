@@ -112,20 +112,23 @@ const render = () => {
   const movieHTML = movieList
     .map(
       (movie) => `<div class="movie">
-                    <img src="${IMG_URL}${movie.poster_path}"
-                        class="movie-img" alt="image" onerror="this.onerror=null; this.src='https://www.movienewz.com/wp-content/uploads/2014/07/poster-holder.jpg';">
-
-                    <div class="movie-info">
-                        <h4>${movie.title}</h4>
-                        <span class="${getColor(
-                          movie.vote_average
-                        )}">${movie.vote_average.toFixed(1)}</span>
-                    </div>
-
-                    <div class="overview">
-                        ${movie.overview || "내용없음"}
-                    </div>
-                </div>` // 여기서 onerror는 출처가 없는 이미지를 대처함
+                     <img src="${IMG_URL}${movie.poster_path}"
+                         class="movie-img" alt="image" onerror="this.onerror=null; this.src='https://www.movienewz.com/wp-content/uploads/2014/07/poster-holder.jpg';"
+                         onclick="openModal('${movie.title}', '${IMG_URL}${
+        movie.poster_path
+      }', '${movie.vote_average.toFixed(1)}', '${
+        movie.overview?.replace(/'/g, "\\'") || "내용없음"
+      }')">
+                     <div class="movie-info">
+                         <h4>${movie.title}</h4>
+                         <span class="${getColor(
+                           movie.vote_average
+                         )}">${movie.vote_average.toFixed(1)}</span>
+                     </div>
+                     <div class="overview">
+                         ${movie.overview || "내용없음"}
+                     </div>
+                 </div>`
     )
     .join("");
 
@@ -274,6 +277,55 @@ const getMoviesBySort = (event) => {
   // 영화 목록을 가져오기
   getMovies();
 };
+// 모달 함수들
+function openModal(title, imgSrc, rating, overview) {
+  // 모달 컨테이너 생성
+  const modal = document.createElement("div");
+  modal.id = "movie-modal";
+  modal.className = "modal";
+
+  // 모달 컨텐츠 생성
+  modal.innerHTML = `
+    <div class="modal-content">
+      <button id="close-modal-btn" class="close-button">&times;</button>
+      <div class="modal-body">
+        <img src="${imgSrc}" alt="${title}" onerror="this.onerror=null; this.src='https://www.movienewz.com/wp-content/uploads/2014/07/poster-holder.jpg';">
+        <div class="modal-info">
+          <h2>${title}</h2>
+          <p class="rating ${getColor(parseFloat(rating))}">평점: ${rating}</p>
+          <h3>줄거리</h3>
+          <p>${overview}</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 문서에 모달 추가
+  document.body.appendChild(modal);
+  document.body.style.overflow = "hidden"; // 모달이 열려있을 때 스크롤 방지
+
+  // 닫기 버튼에 이벤트 리스너 추가 - ID를 사용하여 확실하게 찾기
+  document
+    .getElementById("close-modal-btn")
+    .addEventListener("click", function () {
+      closeModal();
+    });
+
+  // 모달 컨텐츠 외부를 클릭했을 때 모달 닫기
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
+
+function closeModal() {
+  const modal = document.getElementById("movie-modal");
+  if (modal) {
+    modal.remove();
+    document.body.style.overflow = ""; // 스크롤 복원
+  }
+}
 
 // 초기 영화 목록 가져오기
 getLatestMovie();

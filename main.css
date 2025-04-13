@@ -317,3 +317,84 @@ button {
   font-size: 18px;
   gap: 15px;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #242333;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  position: relative;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ccc;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  z-index: 1001; /* 다른 요소보다 위에 있도록 보장 */
+}
+
+.close-button:hover {
+  color: white;
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.modal-body img {
+  width: 220px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.modal-info {
+  flex: 1;
+  overflow: auto;
+}
+
+.modal-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.modal-info .rating {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 작은 화면을 위한 반응형 디자인 */
+@media (max-width: 768px) {
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-body img {
+    width: 180px;
+    margin-bottom: 15px;
+  }
+}
